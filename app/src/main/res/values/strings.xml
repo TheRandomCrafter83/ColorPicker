@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ColorPicker</string>
+    <string name="placeholder">placeholder</string>
+    <string name="ffffff">#FFFFFF</string>
+</resources>

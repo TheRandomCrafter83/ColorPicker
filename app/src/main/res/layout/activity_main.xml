@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/debug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/placeholder"
+        android:layout_marginTop="16dp"
+        style = "@android:style/TextAppearance.Material.Headline"
+        />
+
+    <SeekBar
+        android:id="@+id/vibrance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview"
+        app:layout_constraintBottom_toTopOf="@id/picker"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp"
+        android:splitTrack="false"
+        android:thumb="@drawable/sb_thumb"
+        android:background="#00000000"
+        android:maxHeight="16dp"
+        android:minHeight="8dp"
+        android:max="100"
+        android:indeterminate="false"
+        />
+
+    <com.coderzf1.colorpicker.ColorSpectrumPalette
+        android:id="@+id/picker"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vibrance"
+        app:layout_constraintBottom_toTopOf="@id/borderChosenColor"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/borderChosenColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/hex_value"
+        app:layout_constraintTop_toBottomOf="@id/picker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        android:padding="1dp"
+        android:background="#FF000000"
+        >
+        <LinearLayout
+            android:id="@+id/chosenColor"
+            android:layout_width="150dp"
+            android:layout_height="64dp"
+            android:background="#FFFFFFFF"
+            android:orientation="vertical"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/hex_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/borderChosenColor"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
